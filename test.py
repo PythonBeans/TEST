@@ -1,11 +1,12 @@
 import os, signal
+import time
 def test():
-  var = input("Zahl ")
-  if var == 1:
+  var = input("Zahl ") 
+  if int(var) == 1:
     return "1 gedrueckt"
   else:
     print("was anderes gedrueckt")
-    sleep(3)
+    time.sleep(3)
     os.kill(os.getpid(), signal.SIGTERM) 
 def name():
   name = input("Username: ")
