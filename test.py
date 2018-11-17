@@ -18,5 +18,6 @@ def close():
 print(test(int(input())))
 print(name())
 print("Last step...")
+print("Feierabend")
 print(close())
 
