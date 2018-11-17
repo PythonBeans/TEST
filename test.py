@@ -17,5 +17,6 @@ def close():
   os.kill(os.getpid(), signal.SIGTERM) 
 print(test(int(input())))
 print(name())
+print("Last step...")
 print(close())
 
