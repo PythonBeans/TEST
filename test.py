@@ -26,5 +26,6 @@ print(name())
 print("Last step...")
 print("Feierabend")
 print("Test vom Gemini")
+print("Hello from the Beans Corporation Terminaltron CE!!!")
 print(close())
 
