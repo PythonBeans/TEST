@@ -19,5 +19,6 @@ print(test(int(input())))
 print(name())
 print("Last step...")
 print("Feierabend")
+print("Test vom Gemini")
 print(close())
 
