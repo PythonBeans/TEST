@@ -13,7 +13,9 @@ def name():
   if name == "Beans" or name == "Justin":
     return "Welcome, " + name
   else:
-    return "You are not welcome!!!"
+    print("You are not welcome!!!")
+    time.sleep(3)
+    os.kill(os.getpid(), signal.SIGTERM)
 def close():
   password = input("Your password: ")
   while password != "Python":
