@@ -23,7 +23,6 @@ def close():
   password = input("Your password: ")
   while password != "Python":
     password = input("Your Password: ") 
-  return " "
 
 def add_greeting():
   lst = input("Namelist???")
@@ -62,7 +61,7 @@ print("Last step...")
 print("Feierabend")
 print("Test vom Gemini")
 print("Hello from the Beans Corporation Terminaltron CE!!!") 
-print(close())
+close()
 sdownchoice = None
 while sdownchoice != "w" or "o" or "c":
   sdownchoice = input("(C)ancel, Exit (w)ith or with(o)ut delay???")
