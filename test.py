@@ -28,8 +28,9 @@ print("Feierabend")
 print("Test vom Gemini")
 print("Hello from the Beans Corporation Terminaltron CE!!!") 
 print(close())
-sdownchoice = input("Exit (w)ith or with(o)ut delay???")
+sdownchoice = None
 while sdownchoice != "w" or "o":
+  sdownchoice = input("Exit (w)ith or with(o)ut delay???")
   if sdownchoice == "w":
      time.sleep(5)
      os.kill(os.getpid(), signal.SIGTERM)
