@@ -22,15 +22,23 @@ def close():
     password = input("Your Password: ") 
   return " "
 def add_greeting():
-  def nadd_greeting(lst):
-    nlist = []
-    for name in lst:
-      nlist.append("Hello, " + name + "!")
-      print("Hello, " + name + "!")
-    print(nlist)
   lst = input("Namelist???")
-  nadd_greeting(list(lst))
-
+  lst = lst.split(", ")
+  print("Your list:")
+  print(lst)
+  time.sleep(3)
+  for name in range(len(lst)):
+    lst[name] = "Hello, " + lst[name] + "!"
+    print()
+    print(lst[name])
+    time.sleep(1)
+  print()
+  print("--------------")
+  time.sleep(1)
+  print("Your new list:")
+  time.sleep(2)
+  print()
+  print(lst)
 def choice():
   choice = None
   while choice != "e" or "E":
@@ -59,4 +67,3 @@ while sdownchoice != "w" or "o" or "c":
     choice()
   else:
      print("Don't try shit with me!!!")
-
