@@ -38,7 +38,7 @@ def choice():
     if choice == "e" or "E":
       os.kill(os.getpid(), signal.SIGTERM)
     if choice == "add_greeting":
-      Pre_add_greeting()
+      add_greeting()
 add_greeting()
 test()
 print(name())
