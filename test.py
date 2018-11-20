@@ -21,6 +21,25 @@ def close():
   while password != "Python":
     password = input("Your Password: ") 
   return " "
+def add_greeting():
+  def nadd_greeting(lst):
+    nlist = []
+    for name in lst:
+      nlist.append("Hello, " + name + "!")
+      print("Hello, " + name + "!")
+    print(nlist)
+  lst = input("Namelist???")
+  nadd_greeting(list(lst))
+
+def choice():
+  choice = None
+  while choice != "e" or "E":
+    choice = input("Your choice???") 
+    if choice == "e" or "E":
+      os.kill(os.getpid(), signal.SIGTERM)
+    if choice == "add_greeting":
+      Pre_add_greeting()
+add_greeting()
 test()
 print(name())
 print("Last step...")
@@ -29,14 +48,15 @@ print("Test vom Gemini")
 print("Hello from the Beans Corporation Terminaltron CE!!!") 
 print(close())
 sdownchoice = None
-while sdownchoice != "w" or "o":
-  sdownchoice = input("Exit (w)ith or with(o)ut delay???")
+while sdownchoice != "w" or "o" or "c":
+  sdownchoice = input("(C)ancel, Exit (w)ith or with(o)ut delay???")
   if sdownchoice == "w":
      time.sleep(5)
      os.kill(os.getpid(), signal.SIGTERM)
   if sdownchoice == "o":
      os.kill(os.getpid(), signal.SIGTERM)
+  if sdownchoice == "c" or "C":
+    choice()
   else:
      print("Don't try shit with me!!!")
-
 
