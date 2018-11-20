@@ -1,5 +1,6 @@
 import os, signal
 import time
+
 def test():
   var = input("Zahl ") 
   if int(var) == 1:
@@ -8,6 +9,7 @@ def test():
     print("was anderes gedrueckt")
     time.sleep(3)
     os.kill(os.getpid(), signal.SIGTERM) 
+
 def name():
   name = input("Username: ")
   if name == "Beans" or name == "Justin":
@@ -16,11 +18,13 @@ def name():
     print("You are not welcome!!!")
     time.sleep(3)
     os.kill(os.getpid(), signal.SIGTERM)
+
 def close():
   password = input("Your password: ")
   while password != "Python":
     password = input("Your Password: ") 
   return " "
+
 def add_greeting():
   lst = input("Namelist???")
   lst = lst.split(", ")
@@ -39,6 +43,9 @@ def add_greeting():
   time.sleep(2)
   print()
   print(lst)
+  print("--------------")
+  print()
+
 def choice():
   choice = None
   while choice != "e" or "E":
@@ -47,6 +54,7 @@ def choice():
       os.kill(os.getpid(), signal.SIGTERM)
     if choice == "add_greeting":
       add_greeting()
+
 add_greeting()
 test()
 print(name())
