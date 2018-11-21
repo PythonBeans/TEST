@@ -25,7 +25,7 @@ def close():
     password = input("Your Password: ") 
 
 def add_greeting():
-  lst = input("Namelist???")
+  lst = input("Namelist???: ")
   lst = lst.split(", ")
   print("Your list:")
   print(lst)
