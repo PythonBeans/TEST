@@ -55,9 +55,10 @@ def choice():
       add_greeting()
 
 def sdownchoice():
-  sdownchoice = None
-  while sdownchoice != "w" or "o" or "c":
-    sdownchoice = None
+  sdownchoice = input("(C)ancel, Exit (w)ith or with(o)ut delay???")
+  if sdownchoice != "w" or sdownchoice != "o" or sdownchoice!= "c":
+    print("Don't try shit with me!!!")
+  while sdownchoice != "w" or sdownchoice != "o" or sdownchoice!= "c":
     sdownchoice = input("(C)ancel, Exit (w)ith or with(o)ut delay???")
     if sdownchoice == "w":
        time.sleep(5)
@@ -66,8 +67,11 @@ def sdownchoice():
        os.kill(os.getpid(), signal.SIGTERM)
     if sdownchoice == "c" or "C":
       choice()
-    else:
+    if sdownchoice != "w" or sdownchoice != "o" or sdownchoice!= "c":
        print("Don't try shit with me!!!")
+
+#Debug-Area
+#----------
 
 #test()
 #print(name())
@@ -79,3 +83,19 @@ def sdownchoice():
 #sdownchoice()
 #choice()
 
+def sdownchoice_test():
+  def choicer():
+    choice_tab = []
+    choice_tab.append(1)
+    for choice in choice_tab:
+      choice = input("Gib mal bitte was ein (a, b, c): ")
+      if choice == "a":
+        print("a gedrückt")
+      elif choice == "b":
+        print("b gedrückt")
+      elif choice == "c":
+        print("c gedrückt")
+      else:
+        choicer()
+  choicer()
+sdownchoice_test()
