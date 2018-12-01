@@ -54,23 +54,28 @@ def choice():
     if choice == "add_greeting":
       add_greeting()
 
-add_greeting()
-test()
-print(name())
-print("Last step...")
-print("Feierabend")
-print("Test vom Gemini")
-print("Hello from the Beans Corporation Terminaltron CE!!!") 
-close()
-sdownchoice = None
-while sdownchoice != "w" or "o" or "c":
-  sdownchoice = input("(C)ancel, Exit (w)ith or with(o)ut delay???")
-  if sdownchoice == "w":
-     time.sleep(5)
-     os.kill(os.getpid(), signal.SIGTERM)
-  if sdownchoice == "o":
-     os.kill(os.getpid(), signal.SIGTERM)
-  if sdownchoice == "c" or "C":
-    choice()
-  else:
-     print("Don't try shit with me!!!")
+def sdownchoice():
+  sdownchoice = None
+  while sdownchoice != "w" or "o" or "c":
+    sdownchoice = None
+    sdownchoice = input("(C)ancel, Exit (w)ith or with(o)ut delay???")
+    if sdownchoice == "w":
+       time.sleep(5)
+       os.kill(os.getpid(), signal.SIGTERM)
+    if sdownchoice == "o":
+       os.kill(os.getpid(), signal.SIGTERM)
+    if sdownchoice == "c" or "C":
+      choice()
+    else:
+       print("Don't try shit with me!!!")
+
+#test()
+#print(name())
+#print("Last step...")
+#print("Feierabend")
+#print("Test vom Gemini")
+#print("Hello from the Beans Corporation Terminaltron CE!!!") 
+#close()
+#sdownchoice()
+#choice()
+
