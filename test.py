@@ -45,30 +45,32 @@ def add_greeting():
   print("--------------")
   print()
 
-def choice():
+def p_choice():
   choice = None
   while choice != "e" or "E":
-    choice = input("Your choice???") 
+    choice = input("Your choice??? ") 
     if choice == "e" or "E":
       os.kill(os.getpid(), signal.SIGTERM)
     if choice == "add_greeting":
       add_greeting()
 
 def sdownchoice():
-  sdownchoice = input("(C)ancel, Exit (w)ith or with(o)ut delay???")
-  if sdownchoice != "w" or sdownchoice != "o" or sdownchoice!= "c":
-    print("Don't try shit with me!!!")
-  while sdownchoice != "w" or sdownchoice != "o" or sdownchoice!= "c":
-    sdownchoice = input("(C)ancel, Exit (w)ith or with(o)ut delay???")
-    if sdownchoice == "w":
-       time.sleep(5)
-       os.kill(os.getpid(), signal.SIGTERM)
-    if sdownchoice == "o":
-       os.kill(os.getpid(), signal.SIGTERM)
-    if sdownchoice == "c" or "C":
-      choice()
-    if sdownchoice != "w" or sdownchoice != "o" or sdownchoice!= "c":
-       print("Don't try shit with me!!!")
+  def choicer():
+    choice_tab = []
+    choice_tab.append(1)
+    for sdownchoice in choice_tab:
+      sdownchoice = input("(C)ancel, Exit (w)ith or with(o)ut delay??? ")
+      if sdownchoice == "w":
+        time.sleep(5)
+        os.kill(os.getpid(), signal.SIGTERM)
+      elif sdownchoice == "o":
+        os.kill(os.getpid(), signal.SIGTERM)
+      elif sdownchoice == "c" or sdownchoice == "C":
+        p_choice()
+      elif sdownchoice != "w" or sdownchoice != "o" or sdownchoice!= "c":
+        print("Don't try shit with me!!!")
+        choicer()
+  choicer()
 
 #Debug-Area
 #----------
@@ -80,8 +82,11 @@ def sdownchoice():
 #print("Test vom Gemini")
 #print("Hello from the Beans Corporation Terminaltron CE!!!") 
 #close()
-#sdownchoice()
+sdownchoice()
 #choice()
+
+#Example
+#-------
 
 def sdownchoice_test():
   def choicer():
@@ -98,4 +103,4 @@ def sdownchoice_test():
       else:
         choicer()
   choicer()
-sdownchoice_test()
+#sdownchoice_test()
