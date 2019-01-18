@@ -1,5 +1,10 @@
 import os, signal
 import time
+import sys
+
+def exit():
+  print("Exiting...")
+  sys.exit(0)
 
 def test():
   var = input("Zahl ") 
@@ -45,14 +50,14 @@ def add_greeting():
   print("--------------")
   print()
 
-def p_choice():
-  choice = None
-  while choice != "e" or "E":
-    choice = input("Your choice??? ") 
-    if choice == "e" or "E":
-      os.kill(os.getpid(), signal.SIGTERM)
-    if choice == "add_greeting":
-      add_greeting()
+#def p_choice():
+#  choice = None
+#  while choice != "e" or "E":
+#    choice = input("Your choice??? ") 
+#    if choice == "e" or "E":
+#      os.kill(os.getpid(), signal.SIGTERM)
+#    if choice == "add_greeting":
+#      add_greeting()
 
 def sdownchoice():
   def choicer():
@@ -82,9 +87,9 @@ def sdownchoice():
 #print("Test vom Gemini")
 #print("Hello from the Beans Corporation Terminaltron CE!!!") 
 #close()
-sdownchoice()
+#sdownchoice()
 #choice()
-
+#p_choice()
 #Example
 #-------
 
@@ -104,3 +109,26 @@ def sdownchoice_test():
         choicer()
   choicer()
 #sdownchoice_test()
+
+#p_choice von while loop umschreiben
+
+def p_choice():
+  choicetab = []
+  def choicer():
+    choicetab.append(1)
+    for choice in choicetab:
+      choice = input("Your choice???(e, add_greeting): ") 
+      if choice == "e" or choice == "E":
+        #os.kill(os.getpid(), signal.SIGTERM)
+        exit()
+      elif choice == "add_greeting":
+        add_greeting()
+        choicer()
+      elif choice == "t":
+        print("Test erfolgreich")
+        choicer()
+      else:
+        print("Try again")
+        choicer()
+  choicer()
+p_choice()
