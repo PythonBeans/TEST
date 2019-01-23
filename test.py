@@ -131,4 +131,16 @@ def p_choice():
         print("Try again")
         choicer()
   choicer()
-p_choice()
+#p_choice()
+
+def test_p_choice():
+  choice = None
+  while choice != "e" or choice != "E" or choice != "add_greeting":
+    choice = input("Your choice???(e, add_greeting): ")
+    if choice == "e" or choice == "E":
+      exit()
+    elif choice == "add_greeting":
+      add_greeting()
+    else:
+      print("Try again")
+test_p_choice()
