@@ -67,11 +67,11 @@ def sdownchoice():
       sdownchoice = input("(C)ancel, Exit (w)ith or with(o)ut delay??? ")
       if sdownchoice == "w":
         time.sleep(5)
-        os.kill(os.getpid(), signal.SIGTERM)
+        exit()
       elif sdownchoice == "o":
-        os.kill(os.getpid(), signal.SIGTERM)
+        exit()
       elif sdownchoice == "c" or sdownchoice == "C":
-        p_choice()
+        test_p_choice()
       elif sdownchoice != "w" or sdownchoice != "o" or sdownchoice!= "c":
         print("Don't try shit with me!!!")
         choicer()
@@ -138,7 +138,7 @@ def test_p_choice():
   while choice != "e" or choice != "E" or choice != "add_greeting":
     choice = input("Your choice???(e, add_greeting): ")
     if choice == "e" or choice == "E":
-      exit()
+      sdownchoice()
     elif choice == "add_greeting":
       add_greeting()
     else:
